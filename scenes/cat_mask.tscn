@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c75p7ay1q0ris"]
+
+[ext_resource type="Texture2D" uid="uid://c1q3tjbqv8u3q" path="res://images/CatMask.png" id="1_423om"]
+[ext_resource type="Script" uid="uid://drgc061u8bcue" path="res://scripts/cat_mask.gd" id="1_rhmd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eje46"]
+
+[node name="CatMask" type="Node2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_rhmd1")
+
+[node name="MaskSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_423om")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.1, 2.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_eje46")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+color = Color(0.0941176, 1, 1, 0.223529)
+polygon = PackedVector2Array(-10.9524, -10, 10.9524, -10, 10.9524, 10.4762, -10.9524, 10.4762)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

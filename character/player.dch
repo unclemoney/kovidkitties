@@ -1,0 +1,137 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Player_portrait",
+"description": "",
+"display_name": "NiuBi",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, -100),
+"portraits": {
+"CatMask": {
+"export_overrides": {
+"image": "\"res://images/CatMask.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"CellPhone": {
+"export_overrides": {
+"image": "\"res://images/CellPhone.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Default": {
+"export_overrides": {
+"image": "\"res://images/Player_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDCard": {
+"export_overrides": {
+"image": "\"res://images/IDCard.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture": {
+"export_overrides": {
+"image": "\"res://images/IDPicture.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_1": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_2": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_3": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_4": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_5": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_5.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_6": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_6.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"IDPicture_7": {
+"export_overrides": {
+"image": "\"res://images/IDPicture_7.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Player_portrait": {
+"export_overrides": {
+"image": "\"res://images/Player_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.5
+}

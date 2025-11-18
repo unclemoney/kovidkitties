@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d068037mltgkm"]
+
+[ext_resource type="Script" uid="uid://dt1jumhicpi7l" path="res://scripts/game_clock.gd" id="1_b1e5q"]
+[ext_resource type="FontFile" uid="uid://ch6wwtia3hyi5" path="res://fonts/pixelart.ttf" id="2_hwces"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_myc15"]
+font = ExtResource("2_hwces")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrxls"]
+font = ExtResource("2_hwces")
+
+[node name="GameClock" type="Node2D"]
+script = ExtResource("1_b1e5q")
+
+[node name="Clock" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_myc15")
+
+[node name="Date" type="Label" parent="."]
+offset_top = 39.0
+offset_right = 40.0
+offset_bottom = 62.0
+label_settings = SubResource("LabelSettings_xrxls")

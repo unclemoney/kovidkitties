@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0rrycw7hqn7g"]
+
+[ext_resource type="Script" uid="uid://wixhg8lqca3o" path="res://scripts/id_card.gd" id="1_d6hhn"]
+[ext_resource type="Texture2D" uid="uid://1h5pycg56ekt" path="res://images/IDCard.png" id="1_q54f2"]
+[ext_resource type="FontFile" uid="uid://ch6wwtia3hyi5" path="res://fonts/pixelart.ttf" id="2_l17hb"]
+[ext_resource type="Texture2D" uid="uid://b3vudl5pvt4ho" path="res://images/IDPicture.png" id="3_vet1w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5fdw"]
+font = ExtResource("2_l17hb")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yllf5"]
+font = ExtResource("2_l17hb")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bxyv"]
+size = Vector2(121, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih12j"]
+size = Vector2(270.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23k81"]
+size = Vector2(276, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxa78"]
+size = Vector2(508, 341)
+
+[node name="IDCard" type="Node2D"]
+script = ExtResource("1_d6hhn")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.14902)
+position = Vector2(0, 27)
+texture = ExtResource("1_q54f2")
+
+[node name="IDSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_q54f2")
+
+[node name="IDPicture" type="Node2D" parent="."]
+position = Vector2(620, 122)
+
+[node name="IDPictureSprite" type="Sprite2D" parent="IDPicture"]
+position = Vector2(-776, -132)
+texture = ExtResource("3_vet1w")
+
+[node name="IDName" type="Node2D" parent="."]
+position = Vector2(222, 80)
+
+[node name="IDBreedLabel" type="Label" parent="IDName"]
+offset_left = -266.0
+offset_top = -78.0
+offset_right = -3.0
+offset_bottom = -43.0
+text = "British Short Hair"
+label_settings = SubResource("LabelSettings_t5fdw")
+
+[node name="IDNameLabel" type="Label" parent="IDName"]
+offset_left = -266.0
+offset_top = -141.0
+offset_right = -32.0
+offset_bottom = -109.0
+text = "Bad Kitty"
+label_settings = SubResource("LabelSettings_yllf5")
+
+[node name="PictureArea" type="Area2D" parent="."]
+z_index = 1
+
+[node name="PictureCollision" type="CollisionShape2D" parent="PictureArea"]
+position = Vector2(-155, -10)
+shape = SubResource("RectangleShape2D_1bxyv")
+
+[node name="PicturePoly" type="Polygon2D" parent="PictureArea"]
+position = Vector2(-260, -177)
+color = Color(0.618932, 0.0770206, 0.201937, 0.254902)
+polygon = PackedVector2Array(45, 106, 164, 106, 165, 225, 45, 225)
+
+[node name="NameArea" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NameArea"]
+position = Vector2(90, -55)
+shape = SubResource("RectangleShape2D_ih12j")
+
+[node name="NamePoly" type="Polygon2D" parent="NameArea"]
+position = Vector2(-260, -174)
+color = Color(0.619608, 0.0784314, 0.2, 0.254902)
+polygon = PackedVector2Array(215, 105, 215, 136, 486, 136, 486, 105)
+
+[node name="BreedArea" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreedArea"]
+position = Vector2(93, 8)
+shape = SubResource("RectangleShape2D_23k81")
+
+[node name="BreedPoly" type="Polygon2D" parent="BreedArea"]
+visibility_layer = 2
+position = Vector2(-261, -177)
+color = Color(0.619608, 0.0784314, 0.2, 0.254902)
+polygon = PackedVector2Array(213, 168, 213, 196, 491, 196, 491, 168)
+
+[node name="IDDrag" type="Area2D" parent="."]
+z_index = 1
+collision_priority = 2.0
+
+[node name="IDDragCollision" type="CollisionShape2D" parent="IDDrag"]
+light_mask = 0
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_xxa78")
+
+[connection signal="mouse_entered" from="PictureArea" to="." method="_on_picture_area_mouse_entered"]
+[connection signal="mouse_exited" from="PictureArea" to="." method="_on_picture_area_mouse_exited"]
+[connection signal="mouse_entered" from="NameArea" to="." method="_on_name_area_mouse_entered"]
+[connection signal="mouse_exited" from="NameArea" to="." method="_on_name_area_mouse_exited"]
+[connection signal="mouse_entered" from="BreedArea" to="." method="_on_breed_area_mouse_entered"]
+[connection signal="mouse_exited" from="BreedArea" to="." method="_on_breed_area_mouse_exited"]
+[connection signal="area_entered" from="IDDrag" to="." method="_on_id_drag_area_entered"]
+[connection signal="area_exited" from="IDDrag" to="." method="_on_id_drag_area_exited"]
+[connection signal="body_entered" from="IDDrag" to="." method="_on_id_drag_body_entered"]
+[connection signal="body_exited" from="IDDrag" to="." method="_on_id_drag_body_exited"]
+[connection signal="mouse_entered" from="IDDrag" to="." method="_on_id_drag_mouse_entered"]
+[connection signal="mouse_exited" from="IDDrag" to="." method="_on_id_drag_mouse_exited"]

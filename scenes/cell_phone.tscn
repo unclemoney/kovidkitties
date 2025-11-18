@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://gwug5r1sgr8v"]
+
+[ext_resource type="Script" uid="uid://c5bmi8g5iaof0" path="res://scripts/cell_phone.gd" id="1_2w0m8"]
+[ext_resource type="Texture2D" uid="uid://n2ap811vtng" path="res://images/CellPhone.png" id="1_upx3x"]
+[ext_resource type="FontFile" uid="uid://ch6wwtia3hyi5" path="res://fonts/pixelart.ttf" id="3_ov1ci"]
+
+[node name="CellPhone" type="Node2D"]
+script = ExtResource("1_2w0m8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.321569)
+position = Vector2(7, 13)
+texture = ExtResource("1_upx3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_upx3x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = -83.0
+offset_right = 49.0
+offset_bottom = -55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ov1ci")
+theme_override_font_sizes/font_size = 12
+text = "Meow
+Chat"
+
+[node name="AcknowledgeButton" type="Button" parent="."]
+offset_left = -18.0
+offset_top = 60.0
+offset_right = 18.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("3_ov1ci")
+text = "OK"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -35.0
+offset_right = 44.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ov1ci")
+theme_override_font_sizes/font_size = 8
+text = "You have failed to do your duty, and you will be reprimanded.  Futre errors will not be looked upon lightly."
+autowrap_mode = 3
+
+[connection signal="pressed" from="AcknowledgeButton" to="." method="_on_acknowledge_button_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca7ik0k11aqgm"]
+
+[ext_resource type="Script" uid="uid://dpgpmokmbmen3" path="res://scripts/cat_character.gd" id="1_3gcuv"]
+[ext_resource type="Texture2D" uid="uid://cwwndnwsqjdlr" path="res://images/IDPicture_1.png" id="2_2fuvd"]
+
+[node name="CatCharacter" type="Node2D"]
+script = ExtResource("1_3gcuv")
+
+[node name="CatSprite" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("2_2fuvd")
+
+[node name="MaskSpawnPoint" type="Node2D" parent="CatSprite"]
+position = Vector2(-1, 7)
+
+[node name="IDSpawnPoint" type="Node2D" parent="."]
+position = Vector2(-1, 175)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
